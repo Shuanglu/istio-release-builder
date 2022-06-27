@@ -38,8 +38,7 @@ jobs:
       run: go run main.go build --manifest example/manifest.yaml
     - name: validate
       run: go run main.go validate --release /tmp/istio-release/out
-    - name: upload manifests
-      uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v3
       with:
         name: istio-docker
         path: /tmp/istio-release/out/docker
