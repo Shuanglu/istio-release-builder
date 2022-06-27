@@ -33,7 +33,7 @@ jobs:
     - name: start the container
       run: make shell
     - name: pwd
-      run: docker exec `docker ps|grep build-tool|cut -d ' ' -f 1` pwd 
+      run: docker ps|grep build-tool
     - name: test fpm
       run: which fpm
     - name: create tmp directoy
