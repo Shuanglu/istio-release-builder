@@ -47,7 +47,7 @@ default:
 	@$(MAKE_DOCKER)
 
 shell:
-	@$(RUN) /bin/bash -c 'mkdir -p /tmp/istio-release; go run main.go build --manifest example/manifest.yaml; go run main.go validate --release /tmp/istio-release/out'
+	@$(RUN) /bin/bash -c 'mkdir -p /tmp/istio-release; go run main.go build --manifest example/manifest.yaml;'
 
 .PHONY: default shell
 
