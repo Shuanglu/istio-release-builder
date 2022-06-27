@@ -35,7 +35,7 @@ jobs:
     - name: create tmp directoy
       run: mkdir /tmp/istio-release
     - name: go build
-      run: go run main.go build --manifest example/manifest.yaml
+      run: STEP=1 go run main.go build --manifest example/manifest.yaml
     - name: validate
       run: go run main.go validate --release /tmp/istio-release/out
     - uses: actions/upload-artifact@v3
