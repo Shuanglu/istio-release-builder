@@ -32,6 +32,8 @@ jobs:
         ref: shuang/build
     - name: enter the shell
       run: make shell
+    - name: test fpm
+      run: pwd && which fpm
     - name: create tmp directoy
       run: mkdir /tmp/istio-release
     - name: go build
