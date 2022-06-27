@@ -33,7 +33,7 @@ jobs:
     - name: enter the shell
       run: make shell
     - name: create tmp directoy
-      run: mdkir /tmp/istio-release
+      run: mkdir /tmp/istio-release
     - name: go build
       run: go run main.go build --manifest example/manifest.yaml
     - name: validate
