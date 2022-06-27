@@ -1,12 +1,12 @@
 # Version specifies which version is being built
 # This is use for `--version`, metrics, and determining proxy capabilities.
 # Note that since this determines proxy capabilities, it is desirable to follow Istio semver
-version: 1.14.0-test
+version: 1.13.4
 
 # Some of the artifacts have a docker hub built in - currently this is the operator and Helm charts
 # The specified docker hub will be used there. Note - this does not effect where the images are published,
 # but if the images are not later published to this hub the charts will not pull a valid image
-docker: docker.io/istio
+docker: shawnlu/istio
 
 # Directory specifies the working directory to build in
 directory: /tmp/istio-release
@@ -24,8 +24,8 @@ directory: /tmp/istio-release
 #           possible values are `deps` to check istio.deps, and `modules` to check go.mod
 dependencies:
   istio:
-    git: https://github.com/istio/istio
-    branch: master
+    git: https://github.com/shuanglu/istio
+    branch: shuang/test
   api:
     git: https://github.com/istio/api
     auto: modules
@@ -51,10 +51,5 @@ dependencies:
   release-builder:
     git: https://github.com/istio/release-builder
     branch: master
-dashboards:
-  istio-extension-dashboard: 13277
-  istio-mesh-dashboard: 7639
-  istio-performance-dashboard: 11829
-  istio-service-dashboard: 7636
-  istio-workload-dashboard: 7630
-  pilot-dashboard: 7645
+outputs:
+- docker
