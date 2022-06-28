@@ -47,7 +47,7 @@ default:
 	@$(MAKE_DOCKER)
 
 shell:
-	@$(RUN) /bin/bash -c 'mkdir -p /tmp/istio-release; go run main.go build --manifest example/manifest.yaml;'
+	@$(RUN) /bin/bash -c 'mkdir -p /tmp/istio-release; DATE=`date +'%Y%m%d%H%M%S'`; sed  "s/1.13.4/$DATE/" example/manifest.yaml > example/new_manifest.yaml; go run main.go build --manifest example/new_manifest.yaml;'
 
 .PHONY: default shell
 
