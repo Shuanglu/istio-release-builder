@@ -33,7 +33,7 @@ jobs:
     - name: create directory
       run: mkdir /tmp/istio-release
     - name: replace the version
-      run: sed  "s/1.13.4/$DATE/" example/manifest.yaml > example/new_manifest.yaml; 
+      run: DATE=`date +'%Y%m%d%H%M%S'`;sed  "s/1.13.4/$DATE/" example/manifest.yaml > example/new_manifest.yaml; 
     - name: start the container
       run: make shell
     - uses: actions/upload-artifact@v3
