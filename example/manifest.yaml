@@ -6,7 +6,7 @@ version: 1.13.4
 # Some of the artifacts have a docker hub built in - currently this is the operator and Helm charts
 # The specified docker hub will be used there. Note - this does not effect where the images are published,
 # but if the images are not later published to this hub the charts will not pull a valid image
-docker: shawnlu/istio
+docker: docker.io/shawnlu
 
 # Directory specifies the working directory to build in
 directory: /tmp/istio-release
